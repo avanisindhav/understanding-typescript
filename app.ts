@@ -2,26 +2,19 @@ const person: {
   name: string;
   age: number;
   details: {
-    hobby: string;
+    hobbies: string[];
   };
 } = {
   name: "Avani",
   age: 23,
   details: {
-    hobby: "singing",
-  },
-};
-
-//  inference the object type by typescript
-const product = {
-  id: "abc1",
-  price: 12.89,
-  tags: ["great-offers", "hot-and-new"],
-  details: {
-    title: "Red Carpet",
-    description: "This is Good Product",
+    hobbies: ["singing", "cooking", "reading"],
   },
 };
 
 console.log(person.name);
-// console.log(person.nickname);  //will throw error
+
+for (const hobby of person.details.hobbies) {
+  console.log(hobby.toUpperCase());
+  //   console.log(hobby.map()) !!! ERROR FROM TYPESCRIPT !!!
+}
