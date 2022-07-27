@@ -1,12 +1,11 @@
-var userInput1;
-var userInput2;
-userInput1 = 1;
-userInput1 = "Avani";
-userInput2 = 2;
-userInput2 = "Abhay";
-var userName;
-// userName = userInput1; //not allowed by typescript will throw error as type unknown
-userName = userInput2; //allowed by typescript as type any
-if (typeof userInput1 === "string") {
-    userName = userInput1;
+// function generateError(message: string, code: number) {
+//   throw { message: message, errroCode: code };
+// }
+//typescript infer void as the return type as never type is introduce in newer version of the typescript
+// noty introduce intial version
+//  so
+console.log(generateError("this is for test never type", 500));
+//  even added the console.log still we are not able to get undefined in console since generateError function break the script and never returns so in such case good practice implies to add return type as never and same can happen with the infinite loop
+function generateError(message, code) {
+    throw { message: message, errroCode: code };
 }
