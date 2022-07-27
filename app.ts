@@ -1,12 +1,17 @@
-function addAndHandle(n1: number, n2: number, cb: (num: number) => number) {
-  const result = n1 + n2;
-  cb(result);
-  //   console.log({ value });
+let userInput1: unknown;
+let userInput2: any;
+
+userInput1 = 1;
+userInput1 = "Avani";
+
+userInput2 = 2;
+userInput2 = "Abhay";
+
+let userName: string;
+// userName = userInput1; //not allowed by typescript will throw error as type unknown
+userName = userInput2; //allowed by typescript as type any
+
+//this is allowed as we put check before so typescript allow that
+if (typeof userInput1 === "string") {
+  userName = userInput1;
 }
-
-// parameter are inforce in callback and do not care about return type
-
-addAndHandle(10, 20, (n) => {
-  console.log(n);
-  return n;
-});
