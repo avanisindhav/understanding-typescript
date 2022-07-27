@@ -1,14 +1,7 @@
 //enum
-var Role;
-(function (Role) {
-    Role[Role["USER"] = 0] = "USER";
-    Role[Role["ADMIN"] = 1] = "ADMIN";
-    Role[Role["SUPERADMIN"] = 2] = "SUPERADMIN";
-    Role["TASKER"] = "Tasker not";
-})(Role || (Role = {}));
 var person = {
     name: "Avani",
-    role: Role.USER
+    role: "String"
 };
-person.role = Role.TASKER;
+person.role = 5; //.
 console.log(person.role);
