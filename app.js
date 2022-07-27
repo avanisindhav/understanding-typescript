@@ -1,15 +1,21 @@
-function combine(n1, n2) {
+function combine(input1, input2, resultConversion) {
     var result;
-    if (typeof n1 === "number" && typeof n2 === "number") {
-        result = n1 + n2;
+    if ((typeof input1 === "number" && typeof input2 === "number") ||
+        // resultConversion === "as-numbr" // if i write this tyypo can be catch by typescript
+        resultConversion === "as-number") {
+        result = +input1 + +input2;
     }
     else {
-        result = n1.toString() + " " + n2.toString();
+        result = input1.toString() + " " + input2.toString();
     }
     return result;
 }
-var combinedAges = combine(21, 22);
-console.log(combinedAges);
-var combineNames = combine("Avani", "Sindhav");
-console.log(combineNames);
-//to specify either number or string we use union with |
+var combineAgesAsNumber = combine(12, 23, "as-number");
+console.log(combineAgesAsNumber);
+var combineAgesAsText = combine(12, 23, "as-text");
+console.log(combineAgesAsText);
+// const combineName = combine("Aani", "sindhav", "as-tex"); //this is also throw error so we catch issue using typescript
+// we can use enum too but for only two value we can use literal types
+// literal is specific value
+var number = 2.5;
+// number = 6; //this throw error in typescript so ;like const number = 2.5; like this it will work as lireal type
