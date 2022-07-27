@@ -1,18 +1,23 @@
-// Type Aliases & Object Types
-// Type aliases can be used to "create" your own types. You're not limited to storing union types though - you can also provide an alias to a (possibly complex) object type.
-var u1 = { name: "Max", age: 30 }; // this works!
-// This allows you to avoid unnecessary repetition and manage types centrally.
-// For example, you can simplify this code:
-// function greet(user: { name: string; age: number }) {
-//   console.log("Hi, I am " + user.name);
+// function add(n1: number, n2: number): number {
+//   return n1 + n2;
 // }
-// function isOlder(user: { name: string; age: number }, checkAge: number) {
-//   return checkAge > user.age;
+// //  you can specify return type after parameter :type as seen in above function
+function add(n1, n2) {
+    return n1 + n2;
+}
+//  typescript can infere the return type itself too
+// function printResult(result: number) {
+//   console.log("Result is :", result);
 // }
-// To: type User = { name: string; age: number };
-function greet(user) {
-    console.log("Hi, I am " + user.name);
+//if function does not return anything then return type of funtion will be void
+// even if you try to console console.log(printResult(23)) will return undefined
+// if you wanna pass the return type as undefined then need to pass return; statement in function luike below
+// function printResult(result: number): undefined {
+//   console.log("Result is :", result);
+//   return;
+// }
+// otherwise we can use void withoiut return and typescript can also infer thi stype
+function printResult(result) {
+    console.log("Result is :", result);
 }
-function isOlder(user, checkAge) {
-    return checkAge > user.age;
-}
+console.log(printResult(add(2, 3)));
