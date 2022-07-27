@@ -1,18 +1,18 @@
-function add(n1: number, n2: number) {
+function add27(n1: number, n2: number) {
   return n1 + n2;
 }
 
-function printResult(result: number) {
+function printResult27(result: number) {
   console.log(result);
 }
 
 let combineValues: (x: number, y: number) => number;
 
-combineValues = add;
-// combineValues = printResult; //return TYpeScript ERROR !!!
+combineValues = add27;
+// combineValues = printResult27; //return TYpeScript ERROR !!!
 // let combineValues: Function;
 
-// combineValues = add;
+// combineValues = add27;
 // combineValues = 2; // not allowed as intialise since define type Function
 
 console.log(combineValues(2, 3));

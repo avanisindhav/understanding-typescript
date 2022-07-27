@@ -1,4 +1,4 @@
-function combine(
+function combineLiteraltest(
   input1: number | string,
   input2: number | string,
   resultConversion: "as-number" | "as-text"
@@ -18,11 +18,11 @@ function combine(
   return result;
 }
 
-const combineAgesAsNumber = combine(12, 23, "as-number");
-console.log(combineAgesAsNumber);
+const combineAgesAsNumber23 = combineLiteraltest(12, 23, "as-number");
+console.log(combineAgesAsNumber23);
 
-const combineAgesAsText = combine(12, 23, "as-text");
-console.log(combineAgesAsText);
+const combineAgesAsText23 = combineLiteraltest(12, 23, "as-text");
+console.log(combineAgesAsText23);
 
 // const combineName = combine("Aani", "sindhav", "as-tex"); //this is also throw error so we catch issue using typescript
 

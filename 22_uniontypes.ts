@@ -1,4 +1,4 @@
-function combine(n1: number | string, n2: number | string) {
+function combineUnionTest(n1: number | string, n2: number | string) {
   let result;
 
   if (typeof n1 === "number" && typeof n2 === "number") {
@@ -9,10 +9,10 @@ function combine(n1: number | string, n2: number | string) {
   return result;
 }
 
-const combinedAges = combine(21, 22);
+const combinedAges = combineUnionTest(21, 22);
 console.log(combinedAges);
 
-const combineNames = combine("Avani", "Sindhav");
+const combineNames = combineUnionTest("Avani", "Sindhav");
 console.log(combineNames);
 
 //to specify either number or string we use union with |

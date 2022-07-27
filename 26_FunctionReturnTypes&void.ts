@@ -3,7 +3,7 @@
 // }
 // //  you can specify return type after parameter :type as seen in above function
 
-function add(n1: number, n2: number) {
+function add26(n1: number, n2: number) {
   return n1 + n2;
 }
 //  typescript can infere the return type itself too
@@ -21,8 +21,8 @@ function add(n1: number, n2: number) {
 // }
 
 // otherwise we can use void withoiut return and typescript can also infer thi stype
-function printResult(result: number): void {
+function printResult26(result: number): void {
   console.log("Result is :", result);
 }
 
-console.log(printResult(add(2, 3)));
+console.log(printResult26(add26(2, 3)));
