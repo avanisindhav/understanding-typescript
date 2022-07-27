@@ -1,16 +1,18 @@
-//we can use custom types like above to avoid confusion and s
-function combine(input1, input2, resultConversion) {
-    var result;
-    if ((typeof input1 === "number" && typeof input2 === "number") ||
-        resultConversion === "as-number") {
-        result = +input1 + +input2;
-    }
-    else {
-        result = input1.toString() + " " + input2.toString();
-    }
-    return result;
+// Type Aliases & Object Types
+// Type aliases can be used to "create" your own types. You're not limited to storing union types though - you can also provide an alias to a (possibly complex) object type.
+var u1 = { name: "Max", age: 30 }; // this works!
+// This allows you to avoid unnecessary repetition and manage types centrally.
+// For example, you can simplify this code:
+// function greet(user: { name: string; age: number }) {
+//   console.log("Hi, I am " + user.name);
+// }
+// function isOlder(user: { name: string; age: number }, checkAge: number) {
+//   return checkAge > user.age;
+// }
+// To: type User = { name: string; age: number };
+function greet(user) {
+    console.log("Hi, I am " + user.name);
 }
-var combineAgesAsNumber = combine(12, 23, "as-number");
-console.log(combineAgesAsNumber);
-var combineAgesAsText = combine(12, 23, "as-text");
-console.log(combineAgesAsText);
+function isOlder(user, checkAge) {
+    return checkAge > user.age;
+}
