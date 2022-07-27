@@ -1,18 +1,12 @@
-function add(n1: number, n2: number) {
-  return n1 + n2;
+function addAndHandle(n1: number, n2: number, cb: (num: number) => number) {
+  const result = n1 + n2;
+  cb(result);
+  //   console.log({ value });
 }
 
-function printResult(result: number) {
-  console.log(result);
-}
+// parameter are inforce in callback and do not care about return type
 
-let combineValues: (x: number, y: number) => number;
-
-combineValues = add;
-// combineValues = printResult; //return TYpeScript ERROR !!!
-// let combineValues: Function;
-
-// combineValues = add;
-// combineValues = 2; // not allowed as intialise since define type Function
-
-console.log(combineValues(2, 3));
+addAndHandle(10, 20, (n) => {
+  console.log(n);
+  return n;
+});
